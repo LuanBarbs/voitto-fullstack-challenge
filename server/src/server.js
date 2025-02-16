@@ -1,5 +1,10 @@
-const express = require("express");     // Importação do framework Express para criação do servidor.
-const cors = require("cors");           // Importação do CORS para fazer requsições de vérias origens. 
+import express from "express";          // Importação do framework Express para criação do servidor.   
+import cors from "cors";                // Importação do CORS para fazer requsições de vérias origens.
+
+import { openDB } from "./database.js";    // Importação da função que inicia o banco de dados.
+
+// Cria ou conecta com o banco de dados.
+openDB();
 
 const app = express();                  // Cria a instância do aplicativo Express.
 const PORT = 8080;
