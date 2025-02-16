@@ -5,14 +5,19 @@ export default function Home() {
 
   const [message, setMessage] = useState("Loading!");
 
-  useEffect(function fetchData() {
-    fetch("http://localhost:8080/").then(
-      response => response.json()
-    ).then(
-      data => {
-        setMessage(data.message);
-      }
-    );
+  useEffect(async function fetchData() {
+    try {
+      await fetch("http://localhost:8080/").then(
+        response => response.json()
+      ).then(
+        data => {
+          setMessage(data.message);
+        }
+      );
+    } catch (error) {
+      console.error(`Erro: ${error}`);
+      setMessage("Erro");
+    }
   }, []);
 
   return (
