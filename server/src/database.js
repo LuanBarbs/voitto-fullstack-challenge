@@ -23,7 +23,7 @@ db.serialize(() => {
     db.run(`CREATE TABLE IF NOT EXISTS enrollments (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         course_id INTEGER NOT NULL,
-        studant_name TEXT NOT NULL,
+        student_name TEXT NOT NULL,
         FOREIGN KEY (course_id) REFERENCES courses(id) ON DELETE CASCADE
     )`);
 });

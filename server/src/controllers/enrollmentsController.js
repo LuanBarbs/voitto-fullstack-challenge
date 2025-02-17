@@ -4,14 +4,14 @@ import db from "../database.js"; // Importa o banco de dados.
 export async function insertEnrollment(req, res) {
     const enrollment = req.body;
 
-    if(!enrollment.course_id || !enrollment.studant_name) {
+    if(!enrollment.course_id || !enrollment.student_name) {
         return res.status(400).json({
             error: "ID do curso e nome do aluno são obrigatórios."
         });
     }
 
-    db.run("INSERT INTO enrollments (course_id, studant_name) VALUES (?, ?)",
-        [enrollment.course_id, enrollment.studant_name],
+    db.run("INSERT INTO enrollments (course_id, student_name) VALUES (?, ?)",
+        [enrollment.course_id, enrollment.student_name],
         (error) => {
             if (error) return res.status(500).json({ error: error.message });
 
