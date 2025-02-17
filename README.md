@@ -58,7 +58,7 @@ npm install
 Inicie o servidor backend:
 
 ```sh
-npm start
+npm run dev
 ```
 
 O backend rodará na porta **8080**.
