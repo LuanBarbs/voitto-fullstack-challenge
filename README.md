@@ -65,10 +65,12 @@ O backend rodará na porta **8080**.
 
 ### 4. Configurar e iniciar o frontend
 
+Abra um novo terminal na pasta do projeto.
+
 Acesse a pasta **client**:
 
 ```sh
-cd ../client
+cd client
 ```
 
 Instale as dependências:
