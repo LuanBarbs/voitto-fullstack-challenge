@@ -2,7 +2,7 @@
 function countEnrollments(enrollments) {
     return enrollments.reduce((acc, enrollment) => {
         // Se o curso já foi adicionado no acumulador, incrementa a contagem de alunos.
-        if(acc[enrollment.curso] != undefined) {
+        if (acc[enrollment.curso] != undefined) {
             acc[enrollment.curso] = acc[enrollment.curso] + 1;
         } else {
             // Se o curso ainda não foi adicionado, inicializa a contagem com 1.
@@ -11,6 +11,6 @@ function countEnrollments(enrollments) {
 
         return acc;
     }, {});
-};
+}
 
-module.exports = countEnrollments;
+export default countEnrollments;

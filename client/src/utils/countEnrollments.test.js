@@ -1,4 +1,4 @@
-const countEnrollments = require("./countEnrollments");
+const countEnrollments = require("./countEnrollments").default;
 
 // Teste unitário simples, deve retornar um resultado comum esperado.
 test("Deve contar corretamente os alunos por curso", () => {
@@ -15,7 +15,7 @@ test("Deve contar corretamente os alunos por curso", () => {
     expect(countEnrollments(enrollments)).toStrictEqual({
         "JavaScript Avançado": 2,
         "React do Zero": 2,
-        "Node.js para Backend": 1
+        "Node.js para Backend": 1,
     });
 });
 
@@ -54,16 +54,15 @@ test("Deve retornar um objeto com cursos de apenas uma matrícula", () => {
     });
 });
 
-
 // Teste passando nomes de curso com diferenças entre letras maiúsculas e minúsculas.
 test("Deve diferenciar cursos com nomes em maiúsculas/minúsculas", () => {
     const enrollments = [
         { id: 1, curso: "React", aluno: "Alice" },
-        { id: 2, curso: "react", aluno: "Bob"},
+        { id: 2, curso: "react", aluno: "Bob" },
     ];
 
     expect(countEnrollments(enrollments)).toStrictEqual({
-        "React": 1,
-        "react": 1
+        React: 1,
+        react: 1,
     });
 });

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-
+import Link from "next/link";
 import colors from "@/utils/colors";
 
 // Página principal.
@@ -82,6 +82,7 @@ export default function Home() {
 
       // Atualiza a lista de alunos matriculados.
       fetchStudents(selectedCourse.id);
+      window.confirm("Aluno matriculado!");
     } catch (error) {
       console.error("Erro ao matricular aluno:", error);
     } finally {
@@ -261,7 +262,7 @@ export default function Home() {
                   className={`${colors.primary} ${colors.primaryHover} text-white px-3 py-1 rounded-md`}
                   onClick={() => handleSelectCourse(course)}
                 >
-                  Ver Alunos
+                  Matricular Alunos
                 </button>
                 <button
                   className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-md"
@@ -269,6 +270,13 @@ export default function Home() {
                 >
                   Deletar Curso
                 </button>
+                <Link href={`/cursos/${course.id}`}>
+                    <button
+                        className="bg-blue-500 hover:bg-red-600 text-white px-3 py-1 rounded-md"
+                    >
+                        Ver Curso
+                    </button>
+                </Link>
               </td>
             </tr>
           ))}
@@ -289,26 +297,12 @@ export default function Home() {
           </div>
           <p className="text-gray-600">{selectedCourse.description}</p>
 
-          {/* Lista de alunos matriculados */}
-          <h3 className="mt-4 text-lg font-semibold">Alunos Matriculados</h3>
-          {loading ? (
-            <p className="text-gray-600">Carregando...</p>
-          ) : students.length > 0 ? (
-            <ul className="list-disc list-inside">
-              {students.map((student) => (
-                <li key={student.id}>{student.student_name}</li>
-              ))}
-            </ul>
-          ) : (
-            <p className="text-gray-500">Nenhum aluno matriculado.</p>
-          )}
-
           {/* Formulário para matrícula */}
           <div className="mt-4">
             <input
               type="text"
               placeholder="Nome do aluno"
-              className="w-full p-2 border rounded-md"
+              className="w-full p-2 mt-3 mb-3 border rounded-md"
               value={studentName}
               onChange={(e) => setStudentName(e.target.value)}
             />
