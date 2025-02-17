@@ -1,6 +1,6 @@
 # Documentação do Projeto - Gerenciamento de Cursos e Matrículas
 
-Projeto desenvovildo como Desafio Técnico para a vaga de Estágio em Desenvolvimento Full Stack da Voitto, 2025.
+Projeto desenvolvido como Desafio Técnico para a vaga de Estágio em Desenvolvimento Full Stack da Voitto, 2025.
 
 Consiste em uma aplicação FullStack para gerenciamento de cursos e matrículas. Foi desenvovildo utilizando **Next.js** no frontend e **Express** com **SQLite** no backend.
 
@@ -12,7 +12,6 @@ Consiste em uma aplicação FullStack para gerenciamento de cursos e matrículas
 ## Estrutura do Repositório
 
 ```
-/
 ├── client/    # Aplicação frontend (Next.js)
 │   ├── src/
 │   │   ├── app/           # Configuração e páginas da aplicação
@@ -140,9 +139,9 @@ O frontend exibe uma lista de cursos e permite:
 
 - Filtrar cursos por nome.
 - Matricular alunos em um curso.
-- Exibir alunos matriculados ao clicar em um curso.
+- Deletar um curso.
 - Acessar uma página de detalhes do curso (`/cursos/[id]`), permitindo edição e listagem de alunos matriculados.
-- Utiliza **getServerSideProps** para buscar dados via API.
+- Utilização de React Server Components.
 
 ## Extras Implementados
 
