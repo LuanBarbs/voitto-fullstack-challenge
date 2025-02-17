@@ -31,7 +31,17 @@ Consiste em uma aplicação FullStack para gerenciamento de cursos e matrículas
 
 ## Como Rodar o Projeto
 
-### 1. Configurar e Iniciar o backend
+### 1. Clone o repositório
+```sh
+git clone https://github.com/LuanBarbs/voitto-fullstack-challenge.git
+```
+
+### 2. Acesse a pasta **voitto-fullstack-challenge**
+```sh
+cd voitto-fullstack-challenge
+```
+
+### 3. Configurar e Iniciar o backend
 
 Acesse a pasta **server**:
 
@@ -53,7 +63,7 @@ npm start
 
 O backend rodará na porta **8080**.
 
-### 2. Configurar e iniciar o frontend
+### 4. Configurar e iniciar o frontend
 
 Acesse a pasta **client**:
 
