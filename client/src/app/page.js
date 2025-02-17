@@ -1,6 +1,7 @@
+"use client";
+
 import React, { useState, useEffect } from "react";
 
-// Importação das cores básicas do tema.
 import colors from "@/utils/colors";
 
 // Página principal.
